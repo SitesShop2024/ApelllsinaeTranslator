@@ -79,7 +79,7 @@ def home():
 
 def run_flask():
     if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+        app.run(host='0.0.0.0', port=8080)
 
 
 def run_bot():
@@ -90,3 +90,4 @@ def run_bot():
 def run_server():
     threading.Thread(target=run_bot).start()
     threading.Thread(target=run_flask).start()
+
