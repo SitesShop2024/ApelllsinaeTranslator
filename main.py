@@ -77,10 +77,16 @@ def home():
     return 'Bot working now!'
 
 
-if __name__ == '__main__':
+def run_flask():
+    if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
 
 
-print("Бот запущен...")
-bot.infinity_polling()
+def run_bot():
+    print("Бот запущен...")
+    bot.infinity_polling()
 
+
+def run_server():
+    threading.Thread(target=run_bot).start()
+    threading.Thread(target=run_flask).start()
