@@ -91,3 +91,5 @@ def run_server():
     threading.Thread(target=run_bot).start()
     threading.Thread(target=run_flask).start()
 
+
+run_server()
