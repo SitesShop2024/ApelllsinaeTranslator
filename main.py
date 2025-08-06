@@ -1,5 +1,5 @@
 import telebot
-from telebot import types
+import threading
 from deep_translator import GoogleTranslator, single_detection
 from flask import Flask
 
@@ -93,4 +93,5 @@ def run_server():
 
 
 threading.Thread(target=run_server).start()
+
 
