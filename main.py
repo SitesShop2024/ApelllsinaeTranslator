@@ -1,7 +1,9 @@
 import telebot
 from telebot import types
 from deep_translator import GoogleTranslator, single_detection
+from flask import Flask
 
+app = Flask(__name__)
 
 TOKEN = '8446885622:AAGp8wDzuLzAkq3hOALDK1v8TMvBmRG0plM'
 bot = telebot.TeleBot(TOKEN)
@@ -70,5 +72,15 @@ def normalize_language_code(text):
     return LANG_CODES.get(text)
 
 
+@app.route('/')
+def home():
+    return 'Bot working now!'
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
+
+
 print("Бот запущен...")
 bot.infinity_polling()
+
